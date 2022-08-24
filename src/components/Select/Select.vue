@@ -45,7 +45,7 @@
 				</li>
 			</ul>
 		</el-popover>
-		<button class="add-btn" @click="onAddClick">追加</button>
+		<button :class="['add-btn', {'btn-disabled': disabled}]" @click="onAddClick">追加</button>
 	</div>
 </template>
 
@@ -183,9 +183,11 @@ const onSelectItemMouseover = (item) => {
 	currentHoverItem.value = item
 }
 const onContainerMouseenter = () => {
+	if (props.disabled) return
 	showClose.value = !!currentSelect.value.id && props.clearable
 }
 const onContainerMouseleave = () => {
+	if (props.disabled) return
 	showClose.value = false
 }
 const scrollIntoView = () => {
@@ -214,7 +216,7 @@ const onClosePopover = () => {
 	popperVisible.value = false
 }
 const onAddClick = () => {
-	if (!addKey.value) return
+	if (!addKey.value || props.disabled) return
 	const addOptionData = {
 		id: utils.createUUID(),
 		label: addKey.value
@@ -325,6 +327,11 @@ defineExpose({
 			border-color: $fxBlue4
 			color: $fxWhite
 			outline 0
+		}
+		&.btn-disabled {
+			background-color: $fxBlue5
+			border-color: $fxBlue5
+			cursor not-allowed
 		}
 	}
 }
