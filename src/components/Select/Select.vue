@@ -23,9 +23,9 @@
 						:disabled="disabled"
 						:placeholder="placeholderComputed"
 						:class="['select-input', {'input-disabled': disabled}]"
-						@selectstart.prevent
 						@focus="onInputFocus"
 						@blur="onInputBlur"
+						@mousedown.prevent
 					>
 					<ArrowDown v-show="!showClose" :class="['select-arrow-down', {'select-arrow-up': popperVisible, 'disabled': disabled}]"/>
 					<CircleClose v-show="showClose" class="select-circle-close" @click.stop="onClearClick"/>
