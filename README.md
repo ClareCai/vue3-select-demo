@@ -1,6 +1,6 @@
 # vue3-select-demo
 
-一个基于el-popover封装的select单选下拉框组件demo
+一个基于el-popover封装的select单选下拉框组件demo  
 文本框允许手工输入，右边有个”追加“按钮，点击后可将文本框数据插入下拉菜单作为结果集并选中
 
 ### 演示地址
@@ -12,7 +12,7 @@
 <template>
   <fx-select
     v-model="value"
-		clearable
+    clearable
     :selectOptions="selectOptions"
   >
   </fx-select>
@@ -23,12 +23,12 @@ export default {
     return {
       value: '',
       selectOptions: Array.from({length: 20}, (item,index) => {
-				return {
-					id: index + '',
-					label: "选项" + (index + 1),
-					disabled: index === 2 || index === 5
-				}
-			})
+        return {
+          id: index + '',
+          label: "选项" + (index + 1),
+          disabled: index === 2 || index === 5
+        }
+      })
     }
   }
 }
