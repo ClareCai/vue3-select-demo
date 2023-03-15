@@ -4,7 +4,7 @@
 文本框允许手工输入，右边有个”追加“按钮，点击后可将文本框数据插入下拉菜单作为结果集并选中
 
 ### 演示地址
-[https://clarecai.github.io/vue3-select-demo/dist/](https://clarecai.github.io/vue3-select-demo/dist/)
+[https://clarecai.github.io/vue3-select-demo/](https://clarecai.github.io/vue3-select-demo/)
 
 ### Demo 
 `v-model`的值为当前被选中的`选项`的 id 属性值。
